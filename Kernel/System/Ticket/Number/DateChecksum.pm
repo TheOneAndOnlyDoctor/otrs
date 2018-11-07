@@ -109,7 +109,7 @@ sub GetTNByString {
     my $TicketHookDivider = $ConfigObject->Get('Ticket::HookDivider');
 
     # Check ticket number.
-    if ( $String =~ /\Q$TicketHook$TicketHookDivider\E(\d{8}$SystemID\d{4,40})/i ) {
+    if ( $String =~ /\Q$TicketHook$TicketHookDivider\E(\d{0,8}$SystemID\d{4,40})/i ) {
         return $1;
     }
 
